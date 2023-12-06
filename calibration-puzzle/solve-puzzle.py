@@ -28,7 +28,6 @@ def part_two(filename):
     number_pattern = f'{number_word_pattern}|\\d'
     reversed_number_word_pattern = '|'.join(reversed_number_words.keys())
     reversed_number_pattern = f'{reversed_number_word_pattern}|\\d'
-    print(reversed_number_pattern)
 
     def find_first_number(line):
         matches = re.findall(number_pattern, line)
@@ -42,7 +41,6 @@ def part_two(filename):
     def find_last_number(line):
         reversed_line = line[::-1]
         matches = re.findall(reversed_number_pattern, reversed_line)
-        print("matches->", matches)
         for match in matches:
             if match.isdigit():
                 return match
